@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jsdrift"
+version = "1.0.0"
+description = "Scope-safe, false-positive-aware JavaScript drift monitor for bug bounty and offensive security"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = []            # standard library only
+
+[project.scripts]
+jsdrift = "jsdrift.cli:main"
+
+[tool.setuptools]
+packages = ["jsdrift"]
+
+[tool.setuptools.package-data]
+jsdrift = ["static/*"]

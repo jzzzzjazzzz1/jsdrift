@@ -76,7 +76,7 @@ Alerts only include findings at or above `min_alert_confidence` (default 60) and
 |---|---|
 | Provider-specific formats + **structural validators** | AWS IDs must base32-decode to a real account id; GitHub tokens are CRC32-checked; JWTs must parse (header + payload JSON); PEM headers need actual key material after them (crypto libraries ship the bare header as a constant) |
 | Context-aware severity | expired JWTs are demoted; Supabase `role: anon` is `info`, `service_role` is `critical`; Stripe publishable / Sentry DSN / Mapbox `pk.` / Google OAuth client ids are marked public-by-design |
-| Placeholder / doc-example filter | `YOUR_API_KEY`, `changeme`, `xxxx`, `<secret>`, `${...}`, `AKIAIOSFODNN7EXAMPLE`, the jwt.io sample token, repeated or sequential characters |
+| Placeholder / doc-example filter | `YOUR_API_KEY`, `changeme`, `xxxx`, `<secret>`, `${...}`, the AWS documentation example key, the jwt.io sample token, repeated or sequential characters |
 | Generic-secret rules | key *name* must imply a credential, label/UI names (`passwordLabel`, `forgot_password`) are skipped, CSRF/nonce/site-key names are skipped, values that look like identifiers / i18n keys / dotted paths / URLs / plain words are skipped, entropy and length gates |
 | Real JS lexing | strings come from a lexer that understands comments, regex literals, template literals and concatenation (`"/api/u/"+id+"/edit"` becomes one endpoint) instead of regex-matching minified text |
 | Endpoint noise filters | static assets, MIME types, date formats, `node_modules`, W3C/CDN/doc hosts, regex-looking strings, SPA-fallback HTML served as a "script" |
